@@ -1,40 +1,78 @@
+/*use flexbox*/
+
 body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
+	background-color: #2E3537;
+	font-family: 'Courier New', monospace;
 }
 
-.card-container {
-    position: relative;
-    width: 300px;
-    height: 400px;
-    perspective: 1000px;
+:root {
+	--cards: 4;
+	--cardHeight: 87vh;
+	--cardTopPadding: 1.5em;
+	--cardMargin: 4vw;
+}
+
+.container {
+	width: 90%;
+	margin: 0 auto;
+}
+
+#cards {
+	list-style: none;
+	padding-left: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(var(--cards), var(--cardHeight));
+	gap: var(--cardMargin);
+	padding-bottom: calc(var(--cards) * var(--cardTopPadding));
+	margin-bottom: var(--cardMargin);
+}
+
+#card1 {
+	--index: 1;
+}
+#card2 {
+	--index: 2;
+}
+#card3 {
+	--index: 3;
+}
+#card4 {
+	--index: 4;
 }
 
 .card {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 70%;
-    border-radius: 8px;
-    color: white;
-    text-align: center;
-    line-height: 350px;
-    font-size: 24px;
-    text-decoration: none;
-    transition: transform 0.3s, box-shadow 0.3s;
-    transform-origin: bottom;
+	position: sticky;
+	top: 0;
+	padding-top: calc(var(--index) * var(--cardTopPadding));
 }
 
-.card:hover {
-    transform: translateY(-20px) scale(1.05);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+#card1 .card-body {
+	background-color: #52B2CF;
+}
+#card2 .card-body {
+	/* background-color: #7EC4CF; */
+	background-color: #E5A36F;
+}
+#card3 .card-body {
+	background-color: #9CADCE;
+}
+#card4 .card-body {
+	background-color: #D4AFB9;
 }
 
-.card:not(:first-child) {
-    transform: rotateX(-30deg);
+.card-body {
+	box-sizing: border-box;
+	padding: 30px;
+	border-radius: 50px;
+	box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
+	height: var(--cardHeight);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.5s;
+}
+
+h2 {
+	font-size: 2.5em;
 }

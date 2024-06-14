@@ -3,15 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Cabinet Style Navigation</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Card Stack Interface</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="card-container">
-        <a href="page1.html" class="card" style="background-color: #FF6347;">Groceries</a>
-        <a href="page2.html" class="card" style="background-color: #4682B4;">Weekends</a>
-        <a href="page3.html" class="card" style="background-color: #32CD32;">Services</a>
-        <a href="page4.html" class="card" style="background-color: #FFD700;">Buy or Rent</a>
+    <div class="container">
+        <ul id="cards">
+            <li class="card" id="card1">
+                <div class="card-body">
+                    <h2>Card 1</h2>
+                </div>
+            </li>
+            <li class="card" id="card2">
+                <div class="card-body">
+                    <h2>Card 2</h2>
+                </div>
+            </li>
+            <li class="card" id="card3">
+                <div class="card-body">
+                    <h2>Card 3</h2>
+                </div>
+            </li>
+            <li class="card" id="card4">
+                <div class="card-body">
+                    <h2>Card 4</h2>
+                </div>
+            </li>
+        </ul>
     </div>
 </body>
+
+<script src="app.js"></script>
+
 </html>
